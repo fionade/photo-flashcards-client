@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#009440</color>
+    <color name="colorPrimaryDark">#00612A</color>
+    <color name="colorAccent">#0062A2</color>
+    <color name="colorWrongAnswer">#CC2030</color>
+    <color name="colorRightAnswer">#009440</color>
+    <color name="colorQuizText">#7F7F7F</color>
+    <color name="grid_text_background">#ccffffff</color>
+</resources>

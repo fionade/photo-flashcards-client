@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_list">
+
+    <fragment
+        android:id="@+id/navigation_list"
+        android:name="de.lmu.personalflashcards.uielements.FlashcardListFragment"
+        android:label="@string/title_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_navigation_list_to_navigation_quiz"
+            app:destination="@id/navigation_quiz" />
+        <action
+            android:id="@+id/action_navigation_list_to_new_quiz"
+            app:destination="@+id/navigation_new" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_train_home"
+        android:name="de.lmu.personalflashcards.uielements.TrainingHomeFragment"
+        android:label="@string/title_train"
+        tools:layout="@layout/fragment_train_home">
+        <action
+            android:id="@+id/action_train_home_to_train"
+            app:destination="@id/navigation_train" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_train"
+        android:name="de.lmu.personalflashcards.uielements.TrainingFragment"
+        android:label="@string/title_train"
+        tools:layout="@layout/fragment_train">
+        <action
+            android:id="@+id/action_train_to_train_home"
+            app:destination="@id/navigation_train_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_quiz"
+        android:name="de.lmu.personalflashcards.uielements.PhotoQuizFragment"
+        android:label="@string/title_create_quiz"
+        tools:layout="@layout/fragment_quiz">
+        <argument
+            android:name="openPicker"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_new"
+        android:name="de.lmu.personalflashcards.uielements.PhotoPickerFragment"
+        android:label="@string/add_photo"
+        tools:layout="@layout/fragment_photo_picker">
+        <action
+            android:id="@+id/action_new_to_photo_quiz"
+            app:destination="@id/navigation_quiz"
+            app:popUpTo="@id/navigation_list"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_statistics"
+        android:name="de.lmu.personalflashcards.uielements.StatisticsFragment"
+        android:label="@string/title_show_statistics"
+        tools:layout="@layout/fragment_statistics">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_onboarding"
+        android:name="de.lmu.personalflashcards.uielements.OnboardingFragment"
+        android:label="@string/title_onboarding"
+        tools:layout="@layout/fragment_onboarding">
+    </fragment>
+</navigation>
